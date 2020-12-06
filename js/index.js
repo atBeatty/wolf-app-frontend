@@ -13,16 +13,18 @@ function fetchCourses(){
       })
       .then(function(object) {
         console.log(object);
+        displayCourses(object)
 
     });
 }
 
 // ("http://localhost:3000/courses")
 
-function displayCourses(courseObject){
+function displayCourses(courseArr){
     const bodyElement = document.querySelector("body")
-    bodyElement.innerText += `${courseObject}`
+    courseArr.forEach(course => {
+        bodyElement.innerHTML += `<div>${course.name}</div>`
+    })
     
 }
 
-displayCourses()
