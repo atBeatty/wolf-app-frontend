@@ -11,7 +11,6 @@ class API {
 
                 const id = att.id
                 const name = att.name
-                debugger
                 new Course(id, name)
             })
         })
