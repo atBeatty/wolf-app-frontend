@@ -1,26 +1,28 @@
-class Golfer {
-    constructor(initials){
-        this.initials = initials
-    }
+// class Golfer {
+//     constructor(initials){
+//         this.initials = initials
+//     }
 
-    newGolferForm(){
-        const newGolfer = document.createElement("form")
-        newGolfer.innerHTML = `<input>`
-        console.log(newGolfer)
+//     // static newGolferForm(){
+//     //     const newGolfer = document.createElement("form")
+//     //     newGolfer.innerHTML = `<input>`
+//     //     console.log(newGolfer)
     
-        mainElement.prepend(newGolfer)
-    }
+//     //     mainElement.prepend(newGolfer)
+//     // }
 
-    addGolfer(data){
-        fetch(`${BASE_URL}/golfers`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/json"
-            },
-            body: JSON.stringify(data)
-        })
-    }
+//     // static addGolfer(data){
+//     //     fetch(`${BASE_URL}/golfers`, {
+//     //         method: "POST",
+//     //         headers: {
+//     //             "Content-Type": "application/json",
+//     //             "Accept": "application/json"
+//     //         },
+//     //         body: JSON.stringify(data)
+//     //     })
+//     //     .then(resp => resp.json())
+//     //     .then(json => {debugger})
+//     // }
 
     
-}
+// }
