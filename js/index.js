@@ -1,109 +1,109 @@
 const BASE_URL = "http://localhost:3000"
 
-function renderCourses(){
+// function renderCourses(){
     
-    fetch(`${BASE_URL}/courses`)
-    .then(resp => resp.json())
-    .then(json => {
+//     fetch(`${BASE_URL}/courses`)
+//     .then(resp => resp.json())
+//     .then(json => {
 
         
-        json.forEach(course => {
-            // debugger
-            mainElement.innerHTML += `
-            <div class="course-pick">
-            <h2>${course.name}</h2>
-            </div>
-            <button class="play-button" data-id="${course.id}">Play Course!</button>`
+//         json.forEach(course => {
+//             // debugger
+//             mainElement.innerHTML += `
+//             <div class="course-pick">
+//             <h2>${course.name}</h2>
+//             </div>
+//             <button class="play-button" data-id="${course.id}">Play Course!</button>`
 
-        })
+//         })
 
-        attachPlayButtonEventListeners()
-    })
-
-}
-// const playCourseBtn = function(e){
-//     mainElement.innerHTML = ''
-//     console.log(e)
-
-
-    
-//     let courseId = e.target.id.slice(-1)
-
-//     fetch(`${BASE_URL}/wolf_games`, {
-//         method: "POST",
-//         headers: {
-//             "Content-Type": "application/json",
-//             "Accept": "application/json"
-//         },
-//         body: JSON.stringify()
-//     }).then(resp => {})
-
-//     let selectedCourse
-    
-    // const newWolfGameForm = document.createElement("div")
-
-    // newWolfGameForm.innerHTML = `<h2>Welcome</h2><form class="new-wolf-game">
-    // <label for="stakes">Stakes</label>
-    // <input type="text" name="stakes">
-    // <label for="foursome_id">Foursome_ID</label>
-    // <input type="text" name="foursome">
-    // <input type="submit" value="Submit" id="new-wolf-submit">
-    // </form>`
-
-    // mainElement.prepend(newWolfGameForm)
-    // document.getElementById("new-wolf-submit").addEventListener("submit", addGolfer(e))
-
-    
-
-    // fetch(`${BASE_URL}/wolf_games`)
-    // .then(resp => resp.json())
-    // .then(json => {
-    //     
-    //     json.forEach(att => {
-
-    //         const id = att.id
-    //         const name = att.name
-    //         new Wolf_Game(stakes, course_id, foursome_id)
-    //     })
-    // })
-// }
-
-// const addGolfer = function(data){
-//     
-//     fetch(`${BASE_URL}/golfers`, {
-//         method: "POST",
-//         headers: {
-//             "Content-Type": "application/json",
-//             "Accept": "application/json"
-//         },
-//         body: JSON.stringify(data)
-
-
+//         attachPlayButtonEventListeners()
 //     })
-// }
 
-// const appendFormListeners = function(){
-//     let createFoursomeForm = document.createElement("form")
-//     createFoursomeForm.innerHTML = `
-//     <h2>Welcome</h2>
-//     <label for="teeTime">Tee Time</label>
-//     <input type="text" name="teeTime">
-    
-//     <input type="submit" value="Submit">
-//     `
-//     mainElement.prepend(createFoursomeForm)
 // }
+// // const playCourseBtn = function(e){
+// //     mainElement.innerHTML = ''
+// //     console.log(e)
+
+
+    
+// //     let courseId = e.target.id.slice(-1)
+
+// //     fetch(`${BASE_URL}/wolf_games`, {
+// //         method: "POST",
+// //         headers: {
+// //             "Content-Type": "application/json",
+// //             "Accept": "application/json"
+// //         },
+// //         body: JSON.stringify()
+// //     }).then(resp => {})
+
+// //     let selectedCourse
+    
+//     // const newWolfGameForm = document.createElement("div")
+
+//     // newWolfGameForm.innerHTML = `<h2>Welcome</h2><form class="new-wolf-game">
+//     // <label for="stakes">Stakes</label>
+//     // <input type="text" name="stakes">
+//     // <label for="foursome_id">Foursome_ID</label>
+//     // <input type="text" name="foursome">
+//     // <input type="submit" value="Submit" id="new-wolf-submit">
+//     // </form>`
+
+//     // mainElement.prepend(newWolfGameForm)
+//     // document.getElementById("new-wolf-submit").addEventListener("submit", addGolfer(e))
+
+    
+
+//     // fetch(`${BASE_URL}/wolf_games`)
+//     // .then(resp => resp.json())
+//     // .then(json => {
+//     //     
+//     //     json.forEach(att => {
+
+//     //         const id = att.id
+//     //         const name = att.name
+//     //         new Wolf_Game(stakes, course_id, foursome_id)
+//     //     })
+//     // })
+// // }
+
+// // const addGolfer = function(data){
+// //     
+// //     fetch(`${BASE_URL}/golfers`, {
+// //         method: "POST",
+// //         headers: {
+// //             "Content-Type": "application/json",
+// //             "Accept": "application/json"
+// //         },
+// //         body: JSON.stringify(data)
+
+
+// //     })
+// // }
+
+// // const appendFormListeners = function(){
+// //     let createFoursomeForm = document.createElement("form")
+// //     createFoursomeForm.innerHTML = `
+// //     <h2>Welcome</h2>
+// //     <label for="teeTime">Tee Time</label>
+// //     <input type="text" name="teeTime">
+    
+// //     <input type="submit" value="Submit">
+// //     `
+// //     mainElement.prepend(createFoursomeForm)
+// // }
 
 
 
 const mainElement = document.querySelector("main")
 
-// ADD EVENT LISTENERS TO FORM SUBMITS
+// // ADD EVENT LISTENERS TO FORM SUBMITS
 
 function createAllFormElements(){
     
     // let [hour, minute, second] = new Date().toLocaleTimeString("en-US").split(/:| /)
-    mainElement.innerHTML = `
+    mainElement.innerHTML += `
 
     <div>
     <form class="foursome-form">
@@ -121,7 +121,7 @@ function createAllFormElements(){
     <input class="submit" type="submit" value="Submit">
     </form>
    
-    <form class="wolf-game-form">
+    <form class="wolf-game-form hidden">
     <h2>New Game of Wolf</h2>
     <label name="stakes">Stakes</label>
         <input type="number" name="stakes" placeholder="$$">
@@ -133,70 +133,26 @@ function createAllFormElements(){
     </form>
    
 
-    <form class="golfer-form">
+    <form class="golfer-form hidden">
     <h2>New Golfer</h2>
     <label name="initials">Player 1Initials</label>
     <input type="text" name="initials" placeholder="XYZ">
     <input class="submit" type="submit" value="Submit">
     </form>
     </div>`
-
-    
 }
 
+createAllFormElements()
 
-// ATTACH ALL FORM LISTENERS
+document.querySelector("form").addEventListener("submit", function(event){
+    event.preventDefault()
+    // console.log(event.currentTarget.querySelectorAll("input").forEach(input => console.log(input.value)))
+    let teeTime = event.currentTarget.querySelectorAll("input")[0].value
+    let p1 = event.currentTarget.querySelectorAll("input")[1].value
+    let p2 = event.currentTarget.querySelectorAll("input")[2].value
+    let p3 = event.currentTarget.querySelectorAll("input")[3].value
+    console.log(teeTime, p1, p2, p3)
 
-function attachFormEventListeners(){
-    
-    const allForms = document.querySelectorAll("form")
-    console.log(allForms)
-    allForms.forEach(form => {
-        if (form.classList.contains("golfer-form")){
-            return form.addEventListener("submit", event => {
-                event.preventDefault()
-                createGolfer(event)
-
-            })
-        } else if (form.classList.contains("wolf-game-form")){
-            return form.addEventListener("submit", event => {
-                event.preventDefault()
-                createWolfGame(event)
-                // renderCourses()
-
-            })
-        } else if (form.classList.contains("foursome-form")){
-            return form.addEventListener("submit", event => {
-                event.preventDefault()
-                createFoursome(event)
-            })
-        }
-    })
-}
-
-
-function createGolfer(event){
-    // event.preventDefault()
-    
-    fetch(`${BASE_URL}/golfers`, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json"
-        },
-        body: JSON.stringify({
-            initials: `${event.currentTarget.children[1].value}`
-        })
-        
-    })
-    .then(resp => resp.json())
-    .then(json => console.log(json))
-}
-
-function createFoursome(event){
-    // event.preventDefault()
-    const [p1, p2, p3, p4, p5] = event.currentTarget.querySelectorAll("input")
-    
     fetch(`${BASE_URL}/foursomes`, {
         method: "POST",
         headers: {
@@ -204,82 +160,170 @@ function createFoursome(event){
             "Accept": "application/json"
         },
         body: JSON.stringify({
-            teeTime: `${p1.value}`
+            teeTime: `${teeTime}`,
+            golfers: [{
+                initials: `${p1}`
+            },
+            {
+                initials: `${p2}`
+            }]
         })
-        
     })
     .then(resp => resp.json())
-    .then(json => console.log(json))
-}
+    .then(json => {console.log(json);debugger})
 
 
-function createWolfGame(event){
-    // event.preventDefault()
-    fetch(`${BASE_URL}/wolf_games`, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json"
-        },
-        body: JSON.stringify({
-            stakes: `${event.currentTarget.children[1].value}`,
-            course_id: `${1}`,
-            foursome_id: `${1}`
-        })
+    // const teeTime 
+
+
+})
+
+// // ATTACH ALL FORM LISTENERS
+
+// function attachFormEventListeners(){
+//     debugger
+//     const allForms = document.querySelectorAll("form")
+//     console.log(allForms)
+//     allForms.forEach(form => {
+//         debugger
+//         if (form.classList.contains("golfer-form")){
+//             form.addEventListener("submit", event => {
+//                 console.log("HEYO")
+//                 event.preventDefault()
+//                 return createGolfer(event)
+                
+//             })
+//         } else if (form.classList.contains("wolf-game-form")){
+//             form.addEventListener("submit", event => {
+//                 event.preventDefault()
+//                 console.log("HEYO")
+//                 // createWolfGame(event)
+//                 // renderCourses()
+
+//             })
+//         } else if (form.classList.contains("foursome-form")){
+//             form.addEventListener("submit", event => {
+//                 event.preventDefault()
+//                 createFoursome(event)
+//             })
+//         }
+//     })
+// }
+
+
+// function createGolfer(event){
+//     // event.preventDefault()
+//     debugger
+    
+//     fetch(`${BASE_URL}/golfers`, {
+//         method: "POST",
+//         headers: {
+//             "Content-Type": "application/json",
+//             "Accept": "application/json"
+//         },
+//         body: JSON.stringify({
+//             initials: `${event.currentTarget.children[1].value}`
+//         })
         
-    })
-    .then(resp => resp.json())
-    .then(json => {
-        new WolfGame(json.id, json.foursome_id, json.course_id)
-    })
-}
+//     })
+//     .then(resp => resp.json())
+//     .then(json => console.log(json))
+// }
+
+// function createFoursome(event){
+//     // event.preventDefault()
+//     debugger
+//     const [p1, p2, p3, p4, p5] = event.currentTarget.querySelectorAll("input")
+    
+//     fetch(`${BASE_URL}/foursomes`, {
+//         method: "POST",
+//         headers: {
+//             "Content-Type": "application/json",
+//             "Accept": "application/json"
+//         },
+//         body: JSON.stringify({
+//             teeTime: `${p1.value}`
+//         })
+        
+//     })
+//     .then(resp => resp.json())
+//     .then(json => console.log(json))
+// }
+
+
+// function createWolfGame(event){
+//     debugger
+//     // event.preventDefault()
+//     fetch(`${BASE_URL}/wolf_games`, {
+//         method: "POST",
+//         headers: {
+//             "Content-Type": "application/json",
+//             "Accept": "application/json"
+//         },
+//         body: JSON.stringify({
+//             stakes: `${event.currentTarget.children[1].value}`,
+//             course_id: `${1}`,
+//             foursome_id: `${1}`
+//         })
+        
+//     })
+//     .then(resp => resp.json())
+//     .then(json => {
+//         new WolfGame(json.id, json.foursome_id, json.course_id)
+//     })
+// }
 
 
 
-function attachPlayButtonEventListeners(){
-    // debugger
-    const allPlayButtons = document.querySelectorAll(".play-button")
-    allPlayButtons.forEach(button => {
-        button.addEventListener("click", event => {
-            mainElement.innerHTML = ''
-            // debugger
-            loadChosenCourse(event)
+// function attachPlayButtonEventListeners(){
+//     // debugger
+//     const allPlayButtons = document.querySelectorAll(".play-button")
+//     allPlayButtons.forEach(button => {
+//         button.addEventListener("click", event => {
+//             mainElement.innerHTML = ''
+//             // debugger
 
-        })
-    })
-}
+//             loadChosenCourse(event)
+
+//         })
+//     })
+// }
                                     
-document.addEventListener('DOMContentLoaded', (event) => {
+// document.addEventListener('DOMContentLoaded', (event) => {
     
-    console.log('DOM fully loaded and parsed');
-    // load courses
-    renderCourses()
-    createAllFormElements()
-    attachFormEventListeners()
+//     console.log('DOM fully loaded and parsed');
+//     // load courses
+//     createAllFormElements()
+//     attachFormEventListeners()
 
-    // attachPlayButtonEventListeners()
+//     renderCourses()
+//     // attachFormEventListeners()
+
+//     // attachPlayButtonEventListeners()
     
     
-});
+// });
 
-// attachPlayButtonEventListeners()
+// // attachPlayButtonEventListeners()
 
 
-function loadChosenCourse(event){
-const courseId = event.currentTarget.dataset.id
-    fetch(`${BASE_URL}/courses/${courseId}/holes`)
-    .then(resp => resp.json())
-    .then(json => displayScorecard(json))
-}
+// function loadChosenCourse(event){
+// const courseId = event.currentTarget.dataset.id
+//     fetch(`${BASE_URL}/courses/${courseId}/holes`)
+//     .then(resp => resp.json())
+//     .then(json => displayScorecard(json))
+// }
 
-function displayScorecard(courseArr) {
+// function displayScorecard(json) {
     
-    courseArr.forEach(hole => {
-
-        mainElement.innerHTML += `
-        <div class ="hole-container">
-        <h2>${hole.number}</h2>
-        <h2>${hole.yards}</h2>
-        </div>`
-    })
-}
+//     debugger
+//     json.forEach(hole => {
+//         mainElement.innerHTML += `
+//         <div class ="hole-container">
+//         <h2>number - ${hole.number}</h2>
+//         <h2>yards - ${hole.yards}</h2>
+//         <h2>score - ${hole.score}</h2>
+//         <h2>par - ${hole.par}</h2>
+//         </div>`
+//     })
+// }
