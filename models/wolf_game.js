@@ -12,6 +12,8 @@ class WolfGame {
 
     renderWolfGame(){
         debugger
+        
+
     }
 
     // static renderWolfGame(){
