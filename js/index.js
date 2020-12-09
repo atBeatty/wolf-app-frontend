@@ -8,14 +8,15 @@ function renderCourses(){
 
         
         json.forEach(course => {
-            debugger
+            // debugger
             mainElement.innerHTML += `
-            <div>
+            <div class="course-pick">
             <h2>${course.name}</h2>
             </div>
-            <button class="play-button">Play Course!</button>`
+            <button class="play-button" data-id="${course.id}">Play Course!</button>`
 
         })
+
         attachPlayButtonEventListeners()
     })
 
@@ -105,7 +106,7 @@ function createAllFormElements(){
     mainElement.innerHTML = `
 
     <div>
-    <form class="foursome-form hidden">
+    <form class="foursome-form">
     <h2>New Foursome</h2>
     <label name="teeTime">Tee Time</label>
     <input type="datetime-local" name="teeTime" placeholder="Tee Time">
@@ -120,7 +121,7 @@ function createAllFormElements(){
     <input class="submit" type="submit" value="Submit">
     </form>
    
-    <form class="wolf-game-form hidden">
+    <form class="wolf-game-form">
     <h2>New Game of Wolf</h2>
     <label name="stakes">Stakes</label>
         <input type="number" name="stakes" placeholder="$$">
@@ -132,7 +133,7 @@ function createAllFormElements(){
     </form>
    
 
-    <form class="golfer-form hidden">
+    <form class="golfer-form">
     <h2>New Golfer</h2>
     <label name="initials">Player 1Initials</label>
     <input type="text" name="initials" placeholder="XYZ">
@@ -236,11 +237,14 @@ function createWolfGame(event){
 
 
 function attachPlayButtonEventListeners(){
-    debugger
+    // debugger
     const allPlayButtons = document.querySelectorAll(".play-button")
     allPlayButtons.forEach(button => {
         button.addEventListener("click", event => {
             mainElement.innerHTML = ''
+            // debugger
+            loadChosenCourse(event)
+
         })
     })
 }
@@ -259,3 +263,23 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 // attachPlayButtonEventListeners()
+
+
+function loadChosenCourse(event){
+const courseId = event.currentTarget.dataset.id
+    fetch(`${BASE_URL}/courses/${courseId}/holes`)
+    .then(resp => resp.json())
+    .then(json => displayScorecard(json))
+}
+
+function displayScorecard(courseArr) {
+    
+    courseArr.forEach(hole => {
+
+        mainElement.innerHTML += `
+        <div class ="hole-container">
+        <h2>${hole.number}</h2>
+        <h2>${hole.yards}</h2>
+        </div>`
+    })
+}
