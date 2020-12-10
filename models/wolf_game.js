@@ -1,9 +1,9 @@
 class WolfGame {
-    constructor(id, stakes, foursome, course){
+    constructor(id, stakes, foursome_id, course_id){
         this.id = id
-        this.stakes = stakes
-        this.foursome = foursome
-        this.course = course
+        this.stakes = parseFloat(stakes)
+        this.foursome_id = foursome_id
+        this.course_id = course_id
         this.renderWolfGame()
 
 
@@ -12,8 +12,10 @@ class WolfGame {
 
     renderWolfGame(){
         debugger
-        
-
+        document.querySelector(".wolf-game-container").innerHTML += `
+        <h2>${this.stakes}</h2>
+        <h2>${this.foursome}</h2>`
+       
     }
 
     // static renderWolfGame(){

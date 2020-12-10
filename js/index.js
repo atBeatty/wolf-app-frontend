@@ -116,6 +116,12 @@ function addEventToSubmitFoursome(){
     
     
 
+document.addEventListener('DOMContentLoaded', (event) => {
+    console.log('DOM fully loaded and parsed');
+    createAllFormElements()
+    renderCourses()
+    addEventToSubmitFoursome()
+});
 
 
 function attachPlayButtonEventListeners(){
@@ -124,50 +130,40 @@ function attachPlayButtonEventListeners(){
     allPlayButtons.forEach(button => {
         button.addEventListener("click", event => {
             // mainElement.innerHTML = ''
-            loadChosenCourse(event)
-            debugger
+            coursesElement.classList.add("hidden")
+            document.querySelector(".foursome-form").classList.remove("hidden")
+            document.querySelector(".foursome-form").dataset.id = event.currentTarget.dataset.id
+
+
+            // loadChosenCourse(event)
             // createWolfGame(event)
         })
     })
 }
                                     
-document.addEventListener('DOMContentLoaded', (event) => {
+
+
+
+// function loadChosenCourse(event){
+//     const courseId = event.currentTarget.dataset.id
+//     fetch(`${BASE_URL}/courses/${courseId}/holes`)
+//     .then(resp => resp.json())
+//     .then(json => {
+//     })
+// }
+
+// function displayScorecard(json) {
     
-    console.log('DOM fully loaded and parsed');
-    createAllFormElements()
-    renderCourses()
-    
-    addEventToSubmitFoursome()
-});
-
-
-
-function loadChosenCourse(event){
-    const courseId = event.currentTarget.dataset.id
-    fetch(`${BASE_URL}/courses/${courseId}/holes`)
-    .then(resp => resp.json())
-    .then(json => {
-        
-        // displayScorecard(json)
-        
-    })
-
-    debugger
-    // document.querySelector(".foursome-form").classList.remove("hidden")
-}
-
-function displayScorecard(json) {
-    
-    json.forEach(hole => {
-        mainElement.innerHTML += `
-        <div class ="hole-container">
-        <h2>number - ${hole.number}</h2>
-        <h2>yards - ${hole.yards}</h2>
-        <h2>score - ${hole.score}</h2>
-        <h2>par - ${hole.par}</h2>
-        </div>`
-    })
-}
+//     json.forEach(hole => {
+//         mainElement.innerHTML += `
+//         <div class ="hole-container">
+//         <h2>number - ${hole.number}</h2>
+//         <h2>yards - ${hole.yards}</h2>
+//         <h2>score - ${hole.score}</h2>
+//         <h2>par - ${hole.par}</h2>
+//         </div>`
+//     })
+// }
 
 
 attachPlayButtonEventListeners()
@@ -175,7 +171,8 @@ attachPlayButtonEventListeners()
 
 
 function createNewWolfGame(json){
-    
+    let course_id = document.querySelector(".foursome-form").dataset.id
+
     
     fetch(`${BASE_URL}/wolf_games`, {
         method: "POST",
@@ -184,11 +181,14 @@ function createNewWolfGame(json){
             "Accept": "application/json"
         },
         body: JSON.stringify({
-            stakes: `${40}`,
-            course_id: `${1}`, 
+            stakes: 40,
+            course_id: `${course_id}`, 
             foursome_id: `${json.id}`,
         })
     })
     .then(resp => resp.json())
-    .then(json => {console.log(json);debugger})
+    .then(gameObj => {
+        debugger
+     
+    })
 }
