@@ -181,14 +181,43 @@ function createNewWolfGame(json){
             "Accept": "application/json"
         },
         body: JSON.stringify({
-            stakes: 40,
+            stakes: `40`,
             course_id: `${course_id}`, 
             foursome_id: `${json.id}`,
         })
     })
     .then(resp => resp.json())
-    .then(gameObj => {
-        debugger
-     
+    .then(gameObj => renderWolfGame(gameObj))
+}
+
+
+function renderWolfGame(game){
+
+    
+    fetch(`${BASE_URL}/wolf_games/${game.id}`)
+    .then(resp => resp.json())
+    .then(currentGame => {
+        document.querySelector(".wolf-game-container").innerHTML = `
+        <h2>${currentGame.stakes}</h2>
+        <h2>${currentGame.holes[0].score}</h2>`
+
+        displayScorecard(currentGame.holes)
+        console.log(currentGame)
+    })
+}
+
+function displayScorecard(wolfGameCourse) {
+    
+    wolfGameCourse.forEach(hole => {
+        setTimeout(() => {
+            //your code to be executed after 1 second
+            mainElement.innerHTML += `
+            <div class ="hole-container">
+            <h2>number - ${hole.number}</h2>
+            <h2>yards - ${hole.yards}</h2>
+            <h2>score - ${hole.score}</h2>
+            <h2>par - ${hole.par}</h2>
+            </div>`
+          }, 1500);
     })
 }

@@ -5,7 +5,8 @@
     border: 1px solid gray;
 }
 .hidden {
-    border: 4px solid red;
+
+    display: none;
     visibility: hidden;
 }
 

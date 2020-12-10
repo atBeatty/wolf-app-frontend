@@ -10,13 +10,13 @@ class WolfGame {
         
     }
 
-    renderWolfGame(){
-        debugger
-        document.querySelector(".wolf-game-container").innerHTML += `
-        <h2>${this.stakes}</h2>
-        <h2>${this.foursome}</h2>`
+    // renderWolfGame(){
+    //     debugger
+    //     document.querySelector(".wolf-game-container").innerHTML += `
+    //     <h2>${this.stakes}</h2>
+    //     <h2>${this.foursome}</h2>`
        
-    }
+    // }
 
     // static renderWolfGame(){
     //     newWolfGameForm.innerHTML = `<h2>Welcome</h2><form class="new-wolf-game">
