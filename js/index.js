@@ -173,7 +173,6 @@ attachPlayButtonEventListeners()
 function createNewWolfGame(json){
     let course_id = document.querySelector(".foursome-form").dataset.id
 
-    
     fetch(`${BASE_URL}/wolf_games`, {
         method: "POST",
         headers: {
@@ -187,37 +186,42 @@ function createNewWolfGame(json){
         })
     })
     .then(resp => resp.json())
-    .then(gameObj => renderWolfGame(gameObj))
+    .then(gameObj => {
+        const newGame = new WolfGame()
+        newGame.id = gameObj.id
+        newGame.stakes = parseFloat(gameObj.stakes)
+        newGame.foursome_id = parseInt(gameObj.foursome_id)
+        newGame.course_id = parseInt(gameObj.course_id)
+        renderWolfGame(newGame)
+    })
 }
 
 
 function renderWolfGame(game){
 
-    
     fetch(`${BASE_URL}/wolf_games/${game.id}`)
     .then(resp => resp.json())
     .then(currentGame => {
-        document.querySelector(".wolf-game-container").innerHTML = `
-        <h2>${currentGame.stakes}</h2>
-        <h2>${currentGame.holes[0].score}</h2>`
-
-        displayScorecard(currentGame.holes)
-        console.log(currentGame)
+        debugger
+        currentGame.foursome.forEach(golfer => {
+            document.querySelector(".wolf-game-container").innerHTML += `
+            <h2>${golfer.initials}</h2>`
+        })
+        
+        displayScorecard(currentGame)
     })
 }
 
-function displayScorecard(wolfGameCourse) {
-    
-    wolfGameCourse.forEach(hole => {
-        setTimeout(() => {
+function displayScorecard(wolfGame) {
+    document.querySelector(".foursome-form").classList.add("hidden")
+    debugger
+    wolfGame.holes.forEach(hole => {
             //your code to be executed after 1 second
             mainElement.innerHTML += `
             <div class ="hole-container">
             <h2>number - ${hole.number}</h2>
             <h2>yards - ${hole.yards}</h2>
             <h2>score - ${hole.score}</h2>
-            <h2>par - ${hole.par}</h2>
-            </div>`
-          }, 1500);
+            <h2>par - ${hole.par}</h2>`
     })
 }
