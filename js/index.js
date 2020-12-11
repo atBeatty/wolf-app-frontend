@@ -28,10 +28,8 @@ const mainElement = document.querySelector("main")
 // // ADD EVENT LISTENERS TO FORM SUBMITS
 
 function createAllFormElements(){
-    // let [hour, minute, second] = new Date().toLocaleTimeString("en-US").split(/:| /)
     document.querySelector(".form-box").innerHTML += `
 
-    <div>
     <form class="foursome-form hidden">
     <h2>New Foursome</h2>
     <label name="teeTime">Tee Time</label>
@@ -64,8 +62,7 @@ function createAllFormElements(){
     <label name="initials">Player 1Initials</label>
     <input type="text" name="initials" placeholder="XYZ">
     <input class="submit" type="submit" value="Submit">
-    </form>
-    </div>`
+    </form>`
 }
 
 function addEventToSubmitFoursome(){
@@ -159,12 +156,11 @@ function createNewWolfGame(json){
     .then(resp => resp.json())
     .then(gameObj => {
         const newGame = new WolfGame()
-        debugger
         newGame.id = gameObj.id
         newGame.stakes = parseFloat(gameObj.stakes)
         newGame.foursome_id = parseInt(gameObj.foursome_id)
         newGame.course_id = parseInt(gameObj.course_id)
-        console.log(renderWolfGame(newGame), gameObj)
+        // console.log(renderWolfGame(newGame), gameObj)
         renderWolfGame(newGame)
     })
 }
@@ -200,9 +196,12 @@ function displayScorecard(wolfGame) {
             //your code to be executed after 1 second
             document.querySelector(".wolf-game-container").innerHTML += `
             <div class="hole-container" id="${hole.number}">
+            <div class="hole-info">
             <h2>${hole.number}</h2>
             <h3>Yards - ${hole.yards}</h3>
             <h3>Par - ${hole.par}</h3>
+            </div>
+            <button class="strokes" value="hole-played">Send Score</button>
             </div>`
 
     })
@@ -213,17 +212,27 @@ function addScoresToEachHole(wolfGame){
     .then(resp => resp.json())
     .then(json => {
         console.log(json)
-    })
+        
+        document.querySelectorAll(".hole-container").forEach(hole => {
+            let wolf = parseInt(hole.id)%4
+            if (wolf === 0) wolf = 4
+            console.log(wolf)
 
-    document.querySelectorAll(".hole-container").forEach(hole => {
-        hole.innerHTML += `<div class="players-container">
-        <section class="player-row">Player One</section>
-        <section class="player-row">Player Two</section>
-        <section class="player-row">Player Three</section>
-        <section class="player-row">Player Four</section>
-        </div>`
-    })
+            hole.innerHTML += `<div class="players-container">
+            <section class="player-row">${json.foursome[0].initials}</section>
+            <section class="player-row">${json.foursome[1].initials}</section>
+            <section class="player-row">${json.foursome[2].initials}</section>
+            <section class="player-row">${json.foursome[3].initials}</section>
+            </div>`
 
+            debugger
+            hole.querySelector(`section:nth-child(${wolf}`).classList.add("wolf")
+        })
+    })
     
-    }
+}
+
+
+
+
 

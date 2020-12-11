@@ -16,10 +16,15 @@ input {
 
 .hole-container {
     background-color: lightcyan;
+    display: flex;
 
 }
 .foursomes-container {
     display: inline;
     width: 25 px;
     float: left;
+}
+
+.wolf {
+    color: red;
 }
