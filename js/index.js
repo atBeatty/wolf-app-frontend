@@ -216,7 +216,6 @@ function addScoresToEachHole(wolfGame){
         document.querySelectorAll(".hole-container").forEach(hole => {
             let wolf = parseInt(hole.id)%4
             if (wolf === 0) wolf = 4
-            console.log(wolf)
 
             hole.innerHTML += `<div class="players-container">
             <section class="player-row">${json.foursome[0].initials}</section>
@@ -225,7 +224,6 @@ function addScoresToEachHole(wolfGame){
             <section class="player-row">${json.foursome[3].initials}</section>
             </div>`
 
-            debugger
             hole.querySelector(`section:nth-child(${wolf}`).classList.add("wolf")
         })
     })
