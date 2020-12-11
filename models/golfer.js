@@ -1,6 +1,11 @@
 class Golfer {
-    constructor(initials){
+    constructor(id, initials){
+        this.id = id
         this.initials = initials
+    }
+
+    renderScore(){
+        debugger
     }
 
     // static newGolferForm(){

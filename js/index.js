@@ -22,9 +22,6 @@ function renderCourses(){
 
 }
 
-
-
-
 const coursesElement = document.querySelector(".courses-container")
 const mainElement = document.querySelector("main")
 
@@ -70,9 +67,6 @@ function createAllFormElements(){
     </form>
     </div>`
 }
-
-// createAllFormElements()
-
 
 function addEventToSubmitFoursome(){
     document.querySelector(".foursome-form").addEventListener("submit", function(event){
@@ -143,29 +137,6 @@ function attachPlayButtonEventListeners(){
                                     
 
 
-
-// function loadChosenCourse(event){
-//     const courseId = event.currentTarget.dataset.id
-//     fetch(`${BASE_URL}/courses/${courseId}/holes`)
-//     .then(resp => resp.json())
-//     .then(json => {
-//     })
-// }
-
-// function displayScorecard(json) {
-    
-//     json.forEach(hole => {
-//         mainElement.innerHTML += `
-//         <div class ="hole-container">
-//         <h2>number - ${hole.number}</h2>
-//         <h2>yards - ${hole.yards}</h2>
-//         <h2>score - ${hole.score}</h2>
-//         <h2>par - ${hole.par}</h2>
-//         </div>`
-//     })
-// }
-
-
 attachPlayButtonEventListeners()
 
 
@@ -188,10 +159,12 @@ function createNewWolfGame(json){
     .then(resp => resp.json())
     .then(gameObj => {
         const newGame = new WolfGame()
+        debugger
         newGame.id = gameObj.id
         newGame.stakes = parseFloat(gameObj.stakes)
         newGame.foursome_id = parseInt(gameObj.foursome_id)
         newGame.course_id = parseInt(gameObj.course_id)
+        console.log(renderWolfGame(newGame), gameObj)
         renderWolfGame(newGame)
     })
 }
@@ -201,27 +174,56 @@ function renderWolfGame(game){
 
     fetch(`${BASE_URL}/wolf_games/${game.id}`)
     .then(resp => resp.json())
-    .then(currentGame => {
-        debugger
-        currentGame.foursome.forEach(golfer => {
-            document.querySelector(".wolf-game-container").innerHTML += `
-            <h2>${golfer.initials}</h2>`
+    .then(json => {
+        const stakesContainer = document.querySelector(".stakes-container")
+
+        displayScorecard(json)
+        json.foursome.forEach(golfer => {
+            let golferInitials = document.createElement("h2")
+            golferInitials.innerText = `${golfer.initials}`
+            stakesContainer.appendChild(golferInitials)
         })
-        
-        displayScorecard(currentGame)
+
+
+    
     })
+    addScoresToEachHole(game)
 }
+
+
+// Iterates over wolfGame.course.holes and fills wolf-game-container with hole info
 
 function displayScorecard(wolfGame) {
     document.querySelector(".foursome-form").classList.add("hidden")
-    debugger
     wolfGame.holes.forEach(hole => {
+        // debugger
             //your code to be executed after 1 second
-            mainElement.innerHTML += `
-            <div class ="hole-container">
-            <h2>number - ${hole.number}</h2>
-            <h2>yards - ${hole.yards}</h2>
-            <h2>score - ${hole.score}</h2>
-            <h2>par - ${hole.par}</h2>`
+            document.querySelector(".wolf-game-container").innerHTML += `
+            <div class="hole-container" id="${hole.number}">
+            <h2>${hole.number}</h2>
+            <h3>Yards - ${hole.yards}</h3>
+            <h3>Par - ${hole.par}</h3>
+            </div>`
+
     })
 }
+
+function addScoresToEachHole(wolfGame){
+    fetch(`${BASE_URL}/wolf_games/${wolfGame.id}`)
+    .then(resp => resp.json())
+    .then(json => {
+        console.log(json)
+    })
+
+    document.querySelectorAll(".hole-container").forEach(hole => {
+        hole.innerHTML += `<div class="players-container">
+        <section class="player-row">Player One</section>
+        <section class="player-row">Player Two</section>
+        <section class="player-row">Player Three</section>
+        <section class="player-row">Player Four</section>
+        </div>`
+    })
+
+    
+    }
+

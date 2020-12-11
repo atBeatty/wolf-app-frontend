@@ -2,7 +2,7 @@
     margin-top: 5px;
     margin-bottom: 5px;
     box-sizing: border-box;
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
 }
 .hidden {
     position: absolute;
@@ -12,4 +12,14 @@
 
 input {
     display: block;
+}
+
+.hole-container {
+    background-color: lightcyan;
+
+}
+.foursomes-container {
+    display: inline;
+    width: 25 px;
+    float: left;
 }
