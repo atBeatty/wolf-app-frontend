@@ -16,10 +16,10 @@ function renderCourses(){
             <button class="play-button" data-id="${course.id}">Play Course!</button>`
 
         })
-
+        
         attachPlayButtonEventListeners()
     })
-
+    
 }
 
 const coursesElement = document.querySelector(".courses-container")
@@ -134,7 +134,7 @@ function attachPlayButtonEventListeners(){
                                     
 
 
-attachPlayButtonEventListeners()
+// attachPlayButtonEventListeners()
 
 
 
@@ -155,6 +155,8 @@ function createNewWolfGame(json){
     })
     .then(resp => resp.json())
     .then(gameObj => {
+        // const {id, stakes, foursome_id, course_id} = gameObj
+        // const newGame = new WolfGame(id, parseFloat(stakes))
         const newGame = new WolfGame()
         newGame.id = gameObj.id
         newGame.stakes = parseFloat(gameObj.stakes)
@@ -198,8 +200,8 @@ function displayScorecard(wolfGame) {
             <div class="hole-container" id="${hole.number}">
             <div class="hole-info">
             <h2>${hole.number}</h2>
-            <h3>Yards - ${hole.yards}</h3>
-            <h3>Par - ${hole.par}</h3>
+            <h3 id="yards">Yards - ${hole.yards}</h3>
+            <h3 id="par">Par - ${hole.par}</h3>
             </div>
             <button class="strokes" value="hole-played">Send Score</button>
             </div>`
@@ -226,10 +228,44 @@ function addScoresToEachHole(wolfGame){
 
             hole.querySelector(`section:nth-child(${wolf}`).classList.add("wolf")
         })
+        document.querySelectorAll(".player-row").forEach(row => {
+            row.innerHTML += `
+            <div data-courseId=${json.holes[0].id}>
+            <button class="ticker-button" value=-2>-2</button>
+            <button class="ticker-button" value=-1>-1</button>
+            <button class="ticker-button" value=0>0</button>
+            <button class="ticker-button" value=1>+1</button>
+            <button class="ticker-button" value=2>+2</button>
+            </div>
+            <h3 class="player-strokes"></h3>`
+            
+        })
+
+
+
+
+
+        updateScorecardWithButtons()
     })
-    
 }
 
+
+function updateScorecardWithButtons(){
+    // document.querySelectorAll()
+    document.querySelectorAll(".ticker-button").forEach(ticker => {
+        ticker.addEventListener("click", event => {
+            const par = event.currentTarget.parentElement.parentElement.parentElement.previousElementSibling.previousElementSibling.innerText.slice(-1)
+            let currentScoreToPar = event.currentTarget.value
+            let playerStrokes = event.currentTarget.parentElement.nextElementSibling
+            playerStrokes.innerText = parseInt(par) + parseInt(currentScoreToPar)
+            
+        })
+    })
+        
+}
+
+
+// function do something weith new ascore updateScorecardWithButtons
 
 
 
