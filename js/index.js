@@ -176,6 +176,7 @@ function renderWolfGame(game){
         const stakesContainer = document.querySelector(".stakes-container")
 
         displayScorecard(json)
+
         json.foursome.forEach(golfer => {
             let golferInitials = document.createElement("h2")
             golferInitials.innerText = `${golfer.initials}`
@@ -195,19 +196,21 @@ function displayScorecard(wolfGame) {
     document.querySelector(".foursome-form").classList.add("hidden")
     wolfGame.holes.forEach(hole => {
         // debugger
-            //your code to be executed after 1 second
-            document.querySelector(".wolf-game-container").innerHTML += `
-            <div class="hole-container" id="${hole.number}">
-            <div class="hole-info">
-            <h2>${hole.number}</h2>
-            <h3 id="yards">Yards - ${hole.yards}</h3>
-            <h3 id="par">Par - ${hole.par}</h3>
-            </div>
-            <button class="strokes" value="hole-played">Send Score</button>
-            </div>`
-
+        //your code to be executed after 1 second
+        document.querySelector(".wolf-game-container").innerHTML += `
+        <div class="hole-container" id="${hole.number}">
+        <div class="hole-info">
+        <h2>${hole.number}</h2>
+        <h3 id="yards">Yards - ${hole.yards}</h3>
+        <h3 id="par">Par - ${hole.par}</h3>
+        </div>
+        <button class="send-strokes">Send Score</button>
+        </div>`
+        
     })
+    
 }
+
 
 function addScoresToEachHole(wolfGame){
     fetch(`${BASE_URL}/wolf_games/${wolfGame.id}`)
@@ -244,13 +247,14 @@ function addScoresToEachHole(wolfGame){
 
 
 
+        addEventListenersToSendScoreButtons()
 
-        updateScorecardWithButtons()
+        updateDOMScorecard()
     })
 }
 
 
-function updateScorecardWithButtons(){
+function updateDOMScorecard(){
     // document.querySelectorAll()
     document.querySelectorAll(".ticker-button").forEach(ticker => {
         ticker.addEventListener("click", event => {
@@ -269,4 +273,15 @@ function updateScorecardWithButtons(){
 
 
 
+function addEventListenersToSendScoreButtons(){
+debugger
+    const allSendStrokesButtons = document.querySelectorAll(".send-strokes")
 
+    allSendStrokesButtons.forEach(sendBtn => {
+
+        sendBtn.addEventListener("click", () => {
+            mainElement.innerHTML = ''
+        })
+        
+    })
+}

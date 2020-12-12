@@ -5,7 +5,7 @@ class Golfer {
     }
 
     renderScore(){
-        debugger
+        // debugger
     }
 
     // static newGolferForm(){
