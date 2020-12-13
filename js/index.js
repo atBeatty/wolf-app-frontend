@@ -171,7 +171,7 @@ function createNewWolfGame(json){
     })
     .catch((error) => {
         console.error('Error:', error);
-        alert("Bad things! Ragnarők!");
+        alert("Bad things! Can't create Wolf Game!");
       });
 }
 
@@ -191,6 +191,10 @@ function renderWolfGame(game){
             initialsList.appendChild(golferInitials)
         })
     })
+    .catch((error) => {
+        console.error('Error:', error);
+        alert("Bad things! Can't render Wolf Game!");
+      });
     addScoresToEachHole(game)
 }
 
