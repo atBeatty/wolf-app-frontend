@@ -2,7 +2,15 @@
     margin-top: 5px;
     margin-bottom: 5px;
     box-sizing: border-box;
+    font-family: 'Jost', sans-serif;
+
     /* border: 1px solid gray; */
+}
+
+.horizontal-flex-container {
+    display: flex;
+
+
 }
 .hidden {
     position: absolute;
@@ -21,10 +29,15 @@ input {
 }
 .foursomes-container {
     display: inline;
-    width: 25 px;
+    width: 25px;
     float: left;
 }
 
 .wolf {
     color: red;
+}
+
+.stakes-container {
+    background-color: goldenrod;
+
 }

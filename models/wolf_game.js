@@ -10,14 +10,20 @@ class WolfGame {
         
     }
 
-    renderWithUpdatedScores(){
+    renderWithUpdatedScores(holeNumber){
         debugger
         fetch(`http://localhost:3000/wolf_games/${this.id}`)
         .then(resp => resp.json())
         .then(json => {
-            console.log(json)
+            const scoreCard = document.getElementById("player-individual-strokes-container")
+            debugger
+            scoreCard.innerHTML +=`
+            <div class="score-column" id=${this.id}-${holeNumber}><p>${json.holes[parseInt(holeNumber-1)].score}</p></div>`
+
         })
     }
+
+
 
     
 

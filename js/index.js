@@ -205,7 +205,7 @@ function displayScorecard(wolfGame) {
         <h3 id="yards">Yards - ${hole.yards}</h3>
         <h3 id="par">Par - ${hole.par}</h3>
         </div>
-        <button class="send-strokes">Send Score</button>
+        <button class="send-strokes" data-id="${hole.id}">Send Score</button>
         </div>`
         
     })
@@ -283,9 +283,10 @@ function addEventListenersToSendScoreButtons(){
             const wolfGameId = document.querySelector(".wolf-game-container").id
             // const courseId = event.currentTarget.parentElement.id
             const hole = event.currentTarget.parentElement.id
-            const scoresFromHoleArray = []        
+            let scoresFromHoleArray = []        
             
             event.currentTarget.parentElement.querySelectorAll(".player-strokes").forEach(score => scoresFromHoleArray.push(score.innerText))
+            console.log(hole, "HOLE", scoresFromHoleArray)
 
 
             
