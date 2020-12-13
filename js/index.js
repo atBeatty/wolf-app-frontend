@@ -101,7 +101,10 @@ function addEventToSubmitFoursome(){
         })
         .then(resp => resp.json())
         .then(json => createNewWolfGame(json))
-        
+        .catch((error) => {
+            console.error('Error:', error);
+            alert("Bad things! Ragnarők!");
+          });
     })
 }
     
@@ -166,6 +169,10 @@ function createNewWolfGame(json){
         document.querySelector(".wolf-game-container").id = `${gameObj.id}`
         renderWolfGame(newGame)
     })
+    .catch((error) => {
+        console.error('Error:', error);
+        alert("Bad things! Ragnarők!");
+      });
 }
 
 
@@ -183,9 +190,6 @@ function renderWolfGame(game){
             golferInitials.innerText = `${golfer.initials}`
             initialsList.appendChild(golferInitials)
         })
-
-
-    
     })
     addScoresToEachHole(game)
 }
@@ -199,11 +203,11 @@ function displayScorecard(wolfGame) {
         // debugger
         //your code to be executed after 1 second
         document.querySelector(".wolf-game-container").innerHTML += `
-        <div class="hole-container" id="${hole.number}">
+        <div class="hole-container horizontal-flex-container" id="${hole.number}">
         <div class="hole-info">
         <h2>${hole.number}</h2>
-        <h3 id="yards">Yards - ${hole.yards}</h3>
-        <h3 id="par">Par - ${hole.par}</h3>
+        <h3 id="yards"><span #id"yards-lbl">Yards</span><br> ${hole.yards}</h3>
+        <h3 id="par"><span id="par-lbl">Par</span><br> ${hole.par}</h3>
         </div>
         <button class="send-strokes" data-id="${hole.id}">Send Score</button>
         </div>`

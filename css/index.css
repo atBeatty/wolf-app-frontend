@@ -4,13 +4,35 @@
     box-sizing: border-box;
     font-family: 'Jost', sans-serif;
 
+
     /* border: 1px solid gray; */
+}
+
+button {
+    border: 3px solid darkblue;
+    background: lightblue;
+    color: white;
+    align-self: center;
+}
+.ticker-button {
+    height: 30px;
+    width: 30px;
+    font-size: xx-small;
+    text-align: center;
+    border-radius: 50%;
+    font-family: "Jost", sans-serif;
+    font-weight: 700;
+    color: black;
+
 }
 
 .horizontal-flex-container {
     display: flex;
-
-
+}
+.score-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 .hidden {
     position: absolute;
@@ -22,9 +44,14 @@ input {
     display: block;
 }
 
+.wolf-game-container {
+    display: flex;
+    flex-flow: wrap;
+}
 .hole-container {
     background-color: lightcyan;
-    display: flex;
+    justify-content: space-evenly;
+    width: 400px;
 
 }
 .foursomes-container {
@@ -40,4 +67,12 @@ input {
 .stakes-container {
     background-color: goldenrod;
 
+
+}
+#player-individual-strokes-container {
+    margin: 0px;
+    display: flex;
+    justify-items: space-around;
+    column-gap: 10px;
+    margin-left: 10px;
 }

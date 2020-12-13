@@ -14,6 +14,11 @@ class API {
     //     })
     // }
 
+    // static loadPriorWolfGames(){
+    //     fetch("http://localhots:3000/wolf_games")
+    //     .then(resp => )
+    // }
+
     static updateScores(gameId, hole, scores){
         fetch(`http://localhost:3000/wolf_games/${gameId}`, {
             method: "PATCH",
@@ -29,7 +34,6 @@ class API {
         }) 
         .then(resp => resp.json())
         .then(json => {
-            debugger
             const id = json.id
             const foursome_id = json.foursome[0].foursome_id
             const stakes = json.stakes
