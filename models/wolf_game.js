@@ -10,6 +10,20 @@ class WolfGame {
         
     }
 
+    renderWithUpdatedScores(){
+        debugger
+        fetch(`http://localhost:3000/wolf_games/${this.id}`)
+        .then(resp => resp.json())
+        .then(json => {
+            console.log(json)
+        })
+    }
+
+    
+
+
+
+
 
     
     
