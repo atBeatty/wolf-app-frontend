@@ -100,11 +100,15 @@ function addEventToSubmitFoursome(){
             })
         })
         .then(resp => resp.json())
-        .then(json => createNewWolfGame(json))
+        .then(json => {
+            debugger
+            createNewWolfGame(json)
+        })
         .catch((error) => {
             console.error('Error:', error);
             alert("Bad things! Ragnarők!");
           });
+          document.querySelector(".stakes-container").classList.remove("hidden")
     })
 }
     
@@ -143,7 +147,7 @@ function attachPlayButtonEventListeners(){
 
 function createNewWolfGame(json){
     let course_id = document.querySelector(".foursome-form").dataset.id
-
+    
     fetch(`${BASE_URL}/wolf_games`, {
         method: "POST",
         headers: {
@@ -172,19 +176,19 @@ function createNewWolfGame(json){
     .catch((error) => {
         console.error('Error:', error);
         alert("Bad things! Can't create Wolf Game!");
-      });
+    });
 }
 
 
 function renderWolfGame(game){
-
+    
     fetch(`${BASE_URL}/wolf_games/${game.id}`)
     .then(resp => resp.json())
     .then(json => {
         const initialsList = document.querySelector("#player-initials-list")
-
+        
         displayScorecard(json)
-
+        
         json.foursome.forEach(golfer => {
             let golferInitials = document.createElement("h2")
             golferInitials.innerText = `${golfer.initials}`
@@ -215,7 +219,6 @@ function displayScorecard(wolfGame) {
         </div>
         <button class="send-strokes" data-id="${hole.id}">Send Score</button>
         </div>`
-        
     })
     
 }
@@ -252,16 +255,10 @@ function addScoresToEachHole(wolfGame){
             <h3 class="player-strokes"></h3>`
             
         })
-
-
-
-
         addEventListenersToSendScoreButtons()
-
         updateDOMScorecard()
     })
 }
-
 
 function updateDOMScorecard(){
     // document.querySelectorAll()

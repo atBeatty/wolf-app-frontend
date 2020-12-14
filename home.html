@@ -1,960 +1,923 @@
-
- 
-<!DOCTYPE html>
-<head>
+<html><head>
     <meta charset="utf-8">
     <title>Wolf App</title>
 
 <!-- GOOGLE FONTS -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@700&amp;display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300&amp;display=swap" rel="stylesheet">
 
     <!-- CSS SHEETS -->
 
     <link rel="stylesheet" href="css/index.css">
   </head>
   <body>
- 
- <header>
-</header>
-<main>
-  <div class="stakes-container horizontal-flex-container">
-    <div id="player-initials-list"><h2>as</h2><h2>ATB</h2><h2>ajk</h2><h2>atb</h2></div>
-    <div class="horizontal-flex-container" id="player-individual-strokes-container">
-          <div class="score-column" id="17-1">
-          <h3>1</h3>
-              <h6>3</h6>
-              <h6>3</h6>
-              <h6>6</h6>
-              <h6>6</h6>
-          </div>
-          <div class="score-column" id="17-2">
-          <h3>2</h3>
-              <h6>2</h6>
-              <h6>2</h6>
-              <h6>3</h6>
-              <h6>6</h6>
-          </div>
-          <div class="score-column" id="17-3">
-          <h3>3</h3>
-              <h6>3</h6>
-              <h6>3</h6>
-              <h6>7</h6>
-              <h6>4</h6>
-          </div>
-          <div class="score-column" id="17-4">
-          <h3>4</h3>
-              <h6>4</h6>
-              <h6>4</h6>
-              <h6>5</h6>
-              <h6>6</h6>
-          </div>
-          <div class="score-column" id="17-5">
-          <h3>5</h3>
-              <h6>1</h6>
-              <h6>1</h6>
-              <h6>5</h6>
-              <h6>4</h6>
-          </div>
-          <div class="score-column" id="17-6">
-          <h3>6</h3>
-              <h6>2</h6>
-              <h6>2</h6>
-              <h6>4</h6>
-              <h6>6</h6>
-          </div>
-          <div class="score-column" id="17-7">
-          <h3>7</h3>
-              <h6>2</h6>
-              <h6>3</h6>
-              <h6>6</h6>
-              <h6>6</h6>
-          </div></div>
-  </div>
-  <div class="form-box">
+  <header>
+  </header>
+  <main>
+    <div class="stakes-container horizontal-flex-container">
+      <div id="player-initials-list"><h2>BGS</h2><h2>ATB</h2><h2>GFF</h2><h2>HWW</h2></div>
+      <div class="horizontal-flex-container" id="player-individual-strokes-container">
+                <div class="score-column" id="5-1">
+                <h3>1</h3>
+                    <h6>3</h6>
+                    <h6>3</h6>
+                    <h6>4</h6>
+                    <h6>5</h6>
+                </div>
+                <div class="score-column" id="5-2">
+                <h3>2</h3>
+                    <h6>2</h6>
+                    <h6>3</h6>
+                    <h6>4</h6>
+                    <h6>4</h6>
+                </div></div>
+    </div>
+    <div class="form-box">
 
-  
+    
 
-  <form class="foursome-form hidden" data-id="1">
-  <h2>New Foursome</h2>
-  <label name="teeTime">Tee Time</label>
-  <input type="datetime-local" name="teeTime" placeholder="Tee Time">
-  <label name="initials">Player 1 Initials</label>
-  <input type="text" name="initials" placeholder="XYZ">
-  <label name="initials">Player 2 Initials</label>
-  <input type="text" name="initials" placeholder="XYZ">
-  <label name="initials">Player 3 Initials</label>
-  <input type="text" name="initials" placeholder="XYZ">
-  <label name="initials">Player 4 Initials</label>
-  <input type="text" name="initials" placeholder="XYZ">
-  <input class="submit" type="submit" value="Submit">
-  </form>
- 
-  <form class="wolf-game-form hidden">
-  <h2>New Game of Wolf</h2>
-  <label name="stakes">Stakes</label>
-      <input type="number" name="stakes" placeholder="$$">
-  <label name="foursome_id">Foursome</label>
-      <input type="number" name="foursome_id">
-  <label name="course_id">Course</label>
-      <input type="number" name="course_id">
-  <input class="submit" type="submit" value="Submit">
-  </form>
- 
+    <form class="foursome-form hidden" data-id="1">
+    <h2>New Foursome</h2>
+    <label name="teeTime">Tee Time</label>
+    <input type="datetime-local" name="teeTime" placeholder="Tee Time">
+    <label name="initials">Player 1 Initials</label>
+    <input type="text" name="initials" placeholder="XYZ">
+    <label name="initials">Player 2 Initials</label>
+    <input type="text" name="initials" placeholder="XYZ">
+    <label name="initials">Player 3 Initials</label>
+    <input type="text" name="initials" placeholder="XYZ">
+    <label name="initials">Player 4 Initials</label>
+    <input type="text" name="initials" placeholder="XYZ">
+    <input class="submit" type="submit" value="Submit">
+    </form>
+   
+    <form class="wolf-game-form hidden">
+    <h2>New Game of Wolf</h2>
+    <label name="stakes">Stakes</label>
+        <input type="number" name="stakes" placeholder="$$">
+    <label name="foursome_id">Foursome</label>
+        <input type="number" name="foursome_id">
+    <label name="course_id">Course</label>
+        <input type="number" name="course_id">
+    <input class="submit" type="submit" value="Submit">
+    </form>
+   
 
-  <form class="golfer-form hidden">
-  <h2>New Golfer</h2>
-  <label name="initials">Player 1Initials</label>
-  <input type="text" name="initials" placeholder="XYZ">
-  <input class="submit" type="submit" value="Submit">
-  </form></div>
-  <div class="old-games">
+    <form class="golfer-form hidden">
+    <h2>New Golfer</h2>
+    <label name="initials">Player 1Initials</label>
+    <input type="text" name="initials" placeholder="XYZ">
+    <input class="submit" type="submit" value="Submit">
+    </form></div>
+    <div class="old-games">
 
-  </div>
-  <div class="courses-container hidden">
+    </div>
+    <div class="courses-container hidden">
 
-  
-          <div class="course-pick">
-          <h2>Rose City GC</h2>
-          </div>
-          <button class="play-button" data-id="1">Play Course!</button>
-          <div class="course-pick">
-          <h2>Heron Lakes</h2>
-          </div>
-          <button class="play-button" data-id="2">Play Course!</button>
-          <div class="course-pick">
-          <h2>Pebble Beach</h2>
-          </div>
-          <button class="play-button" data-id="3">Play Course!</button></div>
-  <div class="wolf-game-container" id="17">
+    
+            <div class="course-pick">
+            <h2>Rose City GC</h2>
+            </div>
+            <button class="play-button" data-id="1">Play Course!</button>
+            <div class="course-pick">
+            <h2>Heron Lakes</h2>
+            </div>
+            <button class="play-button" data-id="2">Play Course!</button>
+            <div class="course-pick">
+            <h2>Pebble Beach</h2>
+            </div>
+            <button class="play-button" data-id="3">Play Course!</button></div>
+    <div class="wolf-game-container" id="5">
 
-  
-      <div class="hole-container" id="1">
-      <div class="hole-info">
-      <h2>1</h2>
-      <h3 id="yards">Yards - 346</h3>
-      <h3 id="par">Par - 4</h3>
-      </div>
-      <button class="send-strokes" data-id="1">Send Score</button>
-      <div class="players-container">
-          <section class="player-row wolf">as
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes">3</h3></section>
-          <section class="player-row">ATB
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes">3</h3></section>
-          <section class="player-row">ajk
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes">6</h3></section>
-          <section class="player-row">atb
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes">6</h3></section>
-          </div></div>
-      <div class="hole-container" id="2">
-      <div class="hole-info">
-      <h2>2</h2>
-      <h3 id="yards">Yards - 362</h3>
-      <h3 id="par">Par - 4</h3>
-      </div>
-      <button class="send-strokes" data-id="2">Send Score</button>
-      <div class="players-container">
-          <section class="player-row">as
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes">2</h3></section>
-          <section class="player-row wolf">ATB
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes">2</h3></section>
-          <section class="player-row">ajk
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes">3</h3></section>
-          <section class="player-row">atb
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes">6</h3></section>
-          </div></div>
-      <div class="hole-container" id="3">
-      <div class="hole-info">
-      <h2>3</h2>
-      <h3 id="yards">Yards - 484</h3>
-      <h3 id="par">Par - 5</h3>
-      </div>
-      <button class="send-strokes" data-id="3">Send Score</button>
-      <div class="players-container">
-          <section class="player-row">as
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes">3</h3></section>
-          <section class="player-row">ATB
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes">3</h3></section>
-          <section class="player-row wolf">ajk
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes">7</h3></section>
-          <section class="player-row">atb
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes">4</h3></section>
-          </div></div>
-      <div class="hole-container" id="4">
-      <div class="hole-info">
-      <h2>4</h2>
-      <h3 id="yards">Yards - 323</h3>
-      <h3 id="par">Par - 4</h3>
-      </div>
-      <button class="send-strokes" data-id="4">Send Score</button>
-      <div class="players-container">
-          <section class="player-row">as
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes">4</h3></section>
-          <section class="player-row">ATB
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes">4</h3></section>
-          <section class="player-row">ajk
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes">5</h3></section>
-          <section class="player-row wolf">atb
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes">6</h3></section>
-          </div></div>
-      <div class="hole-container" id="5">
-      <div class="hole-info">
-      <h2>5</h2>
-      <h3 id="yards">Yards - 157</h3>
-      <h3 id="par">Par - 3</h3>
-      </div>
-      <button class="send-strokes" data-id="5">Send Score</button>
-      <div class="players-container">
-          <section class="player-row wolf">as
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes">1</h3></section>
-          <section class="player-row">ATB
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes">1</h3></section>
-          <section class="player-row">ajk
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes">5</h3></section>
-          <section class="player-row">atb
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes">4</h3></section>
-          </div></div>
-      <div class="hole-container" id="6">
-      <div class="hole-info">
-      <h2>6</h2>
-      <h3 id="yards">Yards - 395</h3>
-      <h3 id="par">Par - 4</h3>
-      </div>
-      <button class="send-strokes" data-id="6">Send Score</button>
-      <div class="players-container">
-          <section class="player-row">as
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes">2</h3></section>
-          <section class="player-row wolf">ATB
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes">2</h3></section>
-          <section class="player-row">ajk
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes">4</h3></section>
-          <section class="player-row">atb
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes">6</h3></section>
-          </div></div>
-      <div class="hole-container" id="7">
-      <div class="hole-info">
-      <h2>7</h2>
-      <h3 id="yards">Yards - 334</h3>
-      <h3 id="par">Par - 4</h3>
-      </div>
-      <button class="send-strokes" data-id="7">Send Score</button>
-      <div class="players-container">
-          <section class="player-row">as
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes">2</h3></section>
-          <section class="player-row">ATB
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes">3</h3></section>
-          <section class="player-row wolf">ajk
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes">6</h3></section>
-          <section class="player-row">atb
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes">6</h3></section>
-          </div></div>
-      <div class="hole-container" id="8">
-      <div class="hole-info">
-      <h2>8</h2>
-      <h3 id="yards">Yards - 195</h3>
-      <h3 id="par">Par - 3</h3>
-      </div>
-      <button class="send-strokes" data-id="8">Send Score</button>
-      <div class="players-container">
-          <section class="player-row">as
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes"></h3></section>
-          <section class="player-row">ATB
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes"></h3></section>
-          <section class="player-row">ajk
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes"></h3></section>
-          <section class="player-row wolf">atb
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes"></h3></section>
-          </div></div>
-      <div class="hole-container" id="9">
-      <div class="hole-info">
-      <h2>9</h2>
-      <h3 id="yards">Yards - 397</h3>
-      <h3 id="par">Par - 4</h3>
-      </div>
-      <button class="send-strokes" data-id="9">Send Score</button>
-      <div class="players-container">
-          <section class="player-row wolf">as
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes"></h3></section>
-          <section class="player-row">ATB
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes"></h3></section>
-          <section class="player-row">ajk
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes"></h3></section>
-          <section class="player-row">atb
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes"></h3></section>
-          </div></div>
-      <div class="hole-container" id="10">
-      <div class="hole-info">
-      <h2>10</h2>
-      <h3 id="yards">Yards - 456</h3>
-      <h3 id="par">Par - 5</h3>
-      </div>
-      <button class="send-strokes" data-id="10">Send Score</button>
-      <div class="players-container">
-          <section class="player-row">as
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes"></h3></section>
-          <section class="player-row wolf">ATB
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes"></h3></section>
-          <section class="player-row">ajk
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes"></h3></section>
-          <section class="player-row">atb
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes"></h3></section>
-          </div></div>
-      <div class="hole-container" id="11">
-      <div class="hole-info">
-      <h2>11</h2>
-      <h3 id="yards">Yards - 448</h3>
-      <h3 id="par">Par - 5</h3>
-      </div>
-      <button class="send-strokes" data-id="11">Send Score</button>
-      <div class="players-container">
-          <section class="player-row">as
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes"></h3></section>
-          <section class="player-row">ATB
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes"></h3></section>
-          <section class="player-row wolf">ajk
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes"></h3></section>
-          <section class="player-row">atb
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes"></h3></section>
-          </div></div>
-      <div class="hole-container" id="12">
-      <div class="hole-info">
-      <h2>12</h2>
-      <h3 id="yards">Yards - 186</h3>
-      <h3 id="par">Par - 3</h3>
-      </div>
-      <button class="send-strokes" data-id="12">Send Score</button>
-      <div class="players-container">
-          <section class="player-row">as
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes"></h3></section>
-          <section class="player-row">ATB
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes"></h3></section>
-          <section class="player-row">ajk
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes"></h3></section>
-          <section class="player-row wolf">atb
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes"></h3></section>
-          </div></div>
-      <div class="hole-container" id="13">
-      <div class="hole-info">
-      <h2>13</h2>
-      <h3 id="yards">Yards - 363</h3>
-      <h3 id="par">Par - 4</h3>
-      </div>
-      <button class="send-strokes" data-id="13">Send Score</button>
-      <div class="players-container">
-          <section class="player-row wolf">as
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes"></h3></section>
-          <section class="player-row">ATB
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes"></h3></section>
-          <section class="player-row">ajk
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes"></h3></section>
-          <section class="player-row">atb
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes"></h3></section>
-          </div></div>
-      <div class="hole-container" id="14">
-      <div class="hole-info">
-      <h2>14</h2>
-      <h3 id="yards">Yards - 323</h3>
-      <h3 id="par">Par - 4</h3>
-      </div>
-      <button class="send-strokes" data-id="14">Send Score</button>
-      <div class="players-container">
-          <section class="player-row">as
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes"></h3></section>
-          <section class="player-row wolf">ATB
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes"></h3></section>
-          <section class="player-row">ajk
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes"></h3></section>
-          <section class="player-row">atb
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes"></h3></section>
-          </div></div>
-      <div class="hole-container" id="15">
-      <div class="hole-info">
-      <h2>15</h2>
-      <h3 id="yards">Yards - 122</h3>
-      <h3 id="par">Par - 3</h3>
-      </div>
-      <button class="send-strokes" data-id="15">Send Score</button>
-      <div class="players-container">
-          <section class="player-row">as
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes"></h3></section>
-          <section class="player-row">ATB
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes"></h3></section>
-          <section class="player-row wolf">ajk
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes"></h3></section>
-          <section class="player-row">atb
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes"></h3></section>
-          </div></div>
-      <div class="hole-container" id="16">
-      <div class="hole-info">
-      <h2>16</h2>
-      <h3 id="yards">Yards - 462</h3>
-      <h3 id="par">Par - 5</h3>
-      </div>
-      <button class="send-strokes" data-id="16">Send Score</button>
-      <div class="players-container">
-          <section class="player-row">as
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes"></h3></section>
-          <section class="player-row">ATB
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes"></h3></section>
-          <section class="player-row">ajk
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes"></h3></section>
-          <section class="player-row wolf">atb
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes"></h3></section>
-          </div></div>
-      <div class="hole-container" id="17">
-      <div class="hole-info">
-      <h2>17</h2>
-      <h3 id="yards">Yards - 385</h3>
-      <h3 id="par">Par - 4</h3>
-      </div>
-      <button class="send-strokes" data-id="17">Send Score</button>
-      <div class="players-container">
-          <section class="player-row wolf">as
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes"></h3></section>
-          <section class="player-row">ATB
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes"></h3></section>
-          <section class="player-row">ajk
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes"></h3></section>
-          <section class="player-row">atb
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes"></h3></section>
-          </div></div>
-      <div class="hole-container" id="18">
-      <div class="hole-info">
-      <h2>18</h2>
-      <h3 id="yards">Yards - 426</h3>
-      <h3 id="par">Par - 4</h3>
-      </div>
-      <button class="send-strokes" data-id="18">Send Score</button>
-      <div class="players-container">
-          <section class="player-row">as
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes"></h3></section>
-          <section class="player-row wolf">ATB
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes"></h3></section>
-          <section class="player-row">ajk
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes"></h3></section>
-          <section class="player-row">atb
-          <div data-courseid="1">
-          <button class="ticker-button" value="-2">-2</button>
-          <button class="ticker-button" value="-1">-1</button>
-          <button class="ticker-button" value="0">0</button>
-          <button class="ticker-button" value="1">+1</button>
-          <button class="ticker-button" value="2">+2</button>
-          </div>
-          <h3 class="player-strokes"></h3></section>
-          </div></div></div>
-</main>
+    
+        <div class="hole-container horizontal-flex-container" id="1">
+        <div class="hole-info">
+        <h2>1</h2>
+        <h3 id="yards"><span #id"yards-lbl"="">Yards</span><br> 346</h3>
+        <h3 id="par"><span id="par-lbl">Par</span><br> 4</h3>
+        </div>
+        <button class="send-strokes" data-id="1">Send Score</button>
+        <div class="players-container">
+            <section class="player-row wolf">BGS
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes">3</h3></section>
+            <section class="player-row">ATB
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes">3</h3></section>
+            <section class="player-row">GFF
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes">4</h3></section>
+            <section class="player-row">HWW
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes">5</h3></section>
+            </div></div>
+        <div class="hole-container horizontal-flex-container" id="2">
+        <div class="hole-info">
+        <h2>2</h2>
+        <h3 id="yards"><span #id"yards-lbl"="">Yards</span><br> 362</h3>
+        <h3 id="par"><span id="par-lbl">Par</span><br> 4</h3>
+        </div>
+        <button class="send-strokes" data-id="2">Send Score</button>
+        <div class="players-container">
+            <section class="player-row">BGS
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes">2</h3></section>
+            <section class="player-row wolf">ATB
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes">3</h3></section>
+            <section class="player-row">GFF
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes">4</h3></section>
+            <section class="player-row">HWW
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes">4</h3></section>
+            </div></div>
+        <div class="hole-container horizontal-flex-container" id="3">
+        <div class="hole-info">
+        <h2>3</h2>
+        <h3 id="yards"><span #id"yards-lbl"="">Yards</span><br> 484</h3>
+        <h3 id="par"><span id="par-lbl">Par</span><br> 5</h3>
+        </div>
+        <button class="send-strokes" data-id="3">Send Score</button>
+        <div class="players-container">
+            <section class="player-row">BGS
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            <section class="player-row">ATB
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            <section class="player-row wolf">GFF
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            <section class="player-row">HWW
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            </div></div>
+        <div class="hole-container horizontal-flex-container" id="4">
+        <div class="hole-info">
+        <h2>4</h2>
+        <h3 id="yards"><span #id"yards-lbl"="">Yards</span><br> 323</h3>
+        <h3 id="par"><span id="par-lbl">Par</span><br> 4</h3>
+        </div>
+        <button class="send-strokes" data-id="4">Send Score</button>
+        <div class="players-container">
+            <section class="player-row">BGS
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            <section class="player-row">ATB
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            <section class="player-row">GFF
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            <section class="player-row wolf">HWW
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            </div></div>
+        <div class="hole-container horizontal-flex-container" id="5">
+        <div class="hole-info">
+        <h2>5</h2>
+        <h3 id="yards"><span #id"yards-lbl"="">Yards</span><br> 157</h3>
+        <h3 id="par"><span id="par-lbl">Par</span><br> 3</h3>
+        </div>
+        <button class="send-strokes" data-id="5">Send Score</button>
+        <div class="players-container">
+            <section class="player-row wolf">BGS
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            <section class="player-row">ATB
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            <section class="player-row">GFF
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            <section class="player-row">HWW
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            </div></div>
+        <div class="hole-container horizontal-flex-container" id="6">
+        <div class="hole-info">
+        <h2>6</h2>
+        <h3 id="yards"><span #id"yards-lbl"="">Yards</span><br> 395</h3>
+        <h3 id="par"><span id="par-lbl">Par</span><br> 4</h3>
+        </div>
+        <button class="send-strokes" data-id="6">Send Score</button>
+        <div class="players-container">
+            <section class="player-row">BGS
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            <section class="player-row wolf">ATB
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            <section class="player-row">GFF
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            <section class="player-row">HWW
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            </div></div>
+        <div class="hole-container horizontal-flex-container" id="7">
+        <div class="hole-info">
+        <h2>7</h2>
+        <h3 id="yards"><span #id"yards-lbl"="">Yards</span><br> 334</h3>
+        <h3 id="par"><span id="par-lbl">Par</span><br> 4</h3>
+        </div>
+        <button class="send-strokes" data-id="7">Send Score</button>
+        <div class="players-container">
+            <section class="player-row">BGS
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            <section class="player-row">ATB
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            <section class="player-row wolf">GFF
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            <section class="player-row">HWW
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            </div></div>
+        <div class="hole-container horizontal-flex-container" id="8">
+        <div class="hole-info">
+        <h2>8</h2>
+        <h3 id="yards"><span #id"yards-lbl"="">Yards</span><br> 195</h3>
+        <h3 id="par"><span id="par-lbl">Par</span><br> 3</h3>
+        </div>
+        <button class="send-strokes" data-id="8">Send Score</button>
+        <div class="players-container">
+            <section class="player-row">BGS
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            <section class="player-row">ATB
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            <section class="player-row">GFF
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            <section class="player-row wolf">HWW
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            </div></div>
+        <div class="hole-container horizontal-flex-container" id="9">
+        <div class="hole-info">
+        <h2>9</h2>
+        <h3 id="yards"><span #id"yards-lbl"="">Yards</span><br> 397</h3>
+        <h3 id="par"><span id="par-lbl">Par</span><br> 4</h3>
+        </div>
+        <button class="send-strokes" data-id="9">Send Score</button>
+        <div class="players-container">
+            <section class="player-row wolf">BGS
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            <section class="player-row">ATB
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            <section class="player-row">GFF
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            <section class="player-row">HWW
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            </div></div>
+        <div class="hole-container horizontal-flex-container" id="10">
+        <div class="hole-info">
+        <h2>10</h2>
+        <h3 id="yards"><span #id"yards-lbl"="">Yards</span><br> 456</h3>
+        <h3 id="par"><span id="par-lbl">Par</span><br> 5</h3>
+        </div>
+        <button class="send-strokes" data-id="10">Send Score</button>
+        <div class="players-container">
+            <section class="player-row">BGS
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            <section class="player-row wolf">ATB
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            <section class="player-row">GFF
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            <section class="player-row">HWW
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            </div></div>
+        <div class="hole-container horizontal-flex-container" id="11">
+        <div class="hole-info">
+        <h2>11</h2>
+        <h3 id="yards"><span #id"yards-lbl"="">Yards</span><br> 448</h3>
+        <h3 id="par"><span id="par-lbl">Par</span><br> 5</h3>
+        </div>
+        <button class="send-strokes" data-id="11">Send Score</button>
+        <div class="players-container">
+            <section class="player-row">BGS
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            <section class="player-row">ATB
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            <section class="player-row wolf">GFF
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            <section class="player-row">HWW
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            </div></div>
+        <div class="hole-container horizontal-flex-container" id="12">
+        <div class="hole-info">
+        <h2>12</h2>
+        <h3 id="yards"><span #id"yards-lbl"="">Yards</span><br> 186</h3>
+        <h3 id="par"><span id="par-lbl">Par</span><br> 3</h3>
+        </div>
+        <button class="send-strokes" data-id="12">Send Score</button>
+        <div class="players-container">
+            <section class="player-row">BGS
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            <section class="player-row">ATB
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            <section class="player-row">GFF
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            <section class="player-row wolf">HWW
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            </div></div>
+        <div class="hole-container horizontal-flex-container" id="13">
+        <div class="hole-info">
+        <h2>13</h2>
+        <h3 id="yards"><span #id"yards-lbl"="">Yards</span><br> 363</h3>
+        <h3 id="par"><span id="par-lbl">Par</span><br> 4</h3>
+        </div>
+        <button class="send-strokes" data-id="13">Send Score</button>
+        <div class="players-container">
+            <section class="player-row wolf">BGS
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            <section class="player-row">ATB
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            <section class="player-row">GFF
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            <section class="player-row">HWW
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            </div></div>
+        <div class="hole-container horizontal-flex-container" id="14">
+        <div class="hole-info">
+        <h2>14</h2>
+        <h3 id="yards"><span #id"yards-lbl"="">Yards</span><br> 323</h3>
+        <h3 id="par"><span id="par-lbl">Par</span><br> 4</h3>
+        </div>
+        <button class="send-strokes" data-id="14">Send Score</button>
+        <div class="players-container">
+            <section class="player-row">BGS
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            <section class="player-row wolf">ATB
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            <section class="player-row">GFF
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            <section class="player-row">HWW
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            </div></div>
+        <div class="hole-container horizontal-flex-container" id="15">
+        <div class="hole-info">
+        <h2>15</h2>
+        <h3 id="yards"><span #id"yards-lbl"="">Yards</span><br> 122</h3>
+        <h3 id="par"><span id="par-lbl">Par</span><br> 3</h3>
+        </div>
+        <button class="send-strokes" data-id="15">Send Score</button>
+        <div class="players-container">
+            <section class="player-row">BGS
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            <section class="player-row">ATB
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            <section class="player-row wolf">GFF
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            <section class="player-row">HWW
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            </div></div>
+        <div class="hole-container horizontal-flex-container" id="16">
+        <div class="hole-info">
+        <h2>16</h2>
+        <h3 id="yards"><span #id"yards-lbl"="">Yards</span><br> 462</h3>
+        <h3 id="par"><span id="par-lbl">Par</span><br> 5</h3>
+        </div>
+        <button class="send-strokes" data-id="16">Send Score</button>
+        <div class="players-container">
+            <section class="player-row">BGS
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            <section class="player-row">ATB
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            <section class="player-row">GFF
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            <section class="player-row wolf">HWW
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            </div></div>
+        <div class="hole-container horizontal-flex-container" id="17">
+        <div class="hole-info">
+        <h2>17</h2>
+        <h3 id="yards"><span #id"yards-lbl"="">Yards</span><br> 385</h3>
+        <h3 id="par"><span id="par-lbl">Par</span><br> 4</h3>
+        </div>
+        <button class="send-strokes" data-id="17">Send Score</button>
+        <div class="players-container">
+            <section class="player-row wolf">BGS
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            <section class="player-row">ATB
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            <section class="player-row">GFF
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            <section class="player-row">HWW
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            </div></div>
+        <div class="hole-container horizontal-flex-container" id="18">
+        <div class="hole-info">
+        <h2>18</h2>
+        <h3 id="yards"><span #id"yards-lbl"="">Yards</span><br> 426</h3>
+        <h3 id="par"><span id="par-lbl">Par</span><br> 4</h3>
+        </div>
+        <button class="send-strokes" data-id="18">Send Score</button>
+        <div class="players-container">
+            <section class="player-row">BGS
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            <section class="player-row wolf">ATB
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            <section class="player-row">GFF
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            <section class="player-row">HWW
+            <div data-courseid="1">
+            <button class="ticker-button" value="-2">-2</button>
+            <button class="ticker-button" value="-1">-1</button>
+            <button class="ticker-button" value="0">0</button>
+            <button class="ticker-button" value="1">+1</button>
+            <button class="ticker-button" value="2">+2</button>
+            </div>
+            <h3 class="player-strokes"></h3></section>
+            </div></div></div>
+  </main>
 <footer>
 </footer>
-  
+    
 
 <script type="text/javascript" src="services/API.js"></script>
 
-  <!-- ************* SCRIPT TAGS ************** -->
-  <!-- <script type="text/javascript" src="services/API.js"></script>
-    <script type="text/javascript" src="models/course.js"></script>
-    <script type="text/javascript" src="models/foursome.js"></script>
-    <script type="text/javascript" src="models/golfer.js"></script> -->
-  <script type="text/javascript" src="models/golfer.js"></script>
-  <script type="text/javascript" src="models/wolf_game.js"></script>
-  <script type="text/javascript" src="js/index.js"></script>
+    <!-- ************* SCRIPT TAGS ************** -->
+    <!-- <script type="text/javascript" src="services/API.js"></script>
+      <script type="text/javascript" src="models/course.js"></script>
+      <script type="text/javascript" src="models/foursome.js"></script>
+      <script type="text/javascript" src="models/golfer.js"></script> -->
+    <script type="text/javascript" src="models/golfer.js"></script>
+    <script type="text/javascript" src="models/wolf_game.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+  
 
 
-
-</body>
+</body></html>
