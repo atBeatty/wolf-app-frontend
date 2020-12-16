@@ -181,12 +181,12 @@ function createNewWolfGame(json){
 
 
 function renderWolfGame(game){
-    
+    debugger
     fetch(`${BASE_URL}/wolf_games/${game.id}`)
     .then(resp => resp.json())
     .then(json => {
         const initialsList = document.querySelector("#player-initials-list")
-        
+        debugger
         displayScorecard(json)
         
         json.foursome.forEach(golfer => {
@@ -217,7 +217,7 @@ function displayScorecard(wolfGame) {
         <h3 id="yards"><span #id"yards-lbl">Yards</span><br> ${hole.yards}</h3>
         <h3 id="par"><span id="par-lbl">Par</span><br> ${hole.par}</h3>
         </div>
-        <button class="send-strokes" data-id="${hole.id}">Send Score</button>
+        <button class="send-strokes" data-id="${hole.id}">SEND<br>SCORE</button>
         </div>`
     })
     
