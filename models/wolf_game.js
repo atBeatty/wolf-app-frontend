@@ -4,14 +4,9 @@ class WolfGame {
         this.stakes = parseFloat(stakes)
         this.foursome_id = foursome_id
         this.course_id = course_id
-        // this.renderWolfGame()
-
-
-        
     }
 
     renderWithUpdatedScores(holeNumber){
-        debugger
         fetch(`http://localhost:3000/wolf_games/${this.id}`)
         .then(resp => resp.json())
         .then(json => {
@@ -26,7 +21,6 @@ class WolfGame {
                 <h6>${json.holes[parseInt(holeNumber)-1].score.toString()[3]}</h6>
                 `
 
-                debugger
             } else {
 
                 scoreCard.innerHTML +=`
@@ -40,6 +34,8 @@ class WolfGame {
             }
         })
     }
+
+
 
 
 

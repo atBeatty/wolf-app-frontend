@@ -1,14 +1,14 @@
 const BASE_URL = "http://localhost:3000"
 
+
+
+
 function renderCourses(){
     
     fetch(`${BASE_URL}/courses`)
     .then(resp => resp.json())
     .then(json => {
-
-        
         json.forEach(course => {
-            // debugger
             coursesElement.innerHTML += `
             <div class="course-pick">
             <h2>${course.name}</h2>
@@ -74,7 +74,6 @@ function addEventToSubmitFoursome(){
         let p2 = event.currentTarget.querySelectorAll("input")[2].value
         let p3 = event.currentTarget.querySelectorAll("input")[3].value
         let p4 = event.currentTarget.querySelectorAll("input")[4].value
-        // console.log(teeTime, p1, p2, p3)
         
         fetch(`${BASE_URL}/foursomes`, {
             method: "POST",
@@ -101,7 +100,6 @@ function addEventToSubmitFoursome(){
         })
         .then(resp => resp.json())
         .then(json => {
-            debugger
             createNewWolfGame(json)
         })
         .catch((error) => {
@@ -123,27 +121,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
 function attachPlayButtonEventListeners(){
-    // debugger
     const allPlayButtons = document.querySelectorAll(".play-button")
     allPlayButtons.forEach(button => {
         button.addEventListener("click", event => {
-            // mainElement.innerHTML = ''
             coursesElement.classList.add("hidden")
             document.querySelector(".foursome-form").classList.remove("hidden")
             document.querySelector(".foursome-form").dataset.id = event.currentTarget.dataset.id
-
-
-            // loadChosenCourse(event)
-            // createWolfGame(event)
         })
     })
 }
-                                    
-
-
-// attachPlayButtonEventListeners()
-
-
 
 function createNewWolfGame(json){
     let course_id = document.querySelector(".foursome-form").dataset.id
@@ -162,14 +148,11 @@ function createNewWolfGame(json){
     })
     .then(resp => resp.json())
     .then(gameObj => {
-        // const {id, stakes, foursome_id, course_id} = gameObj
-        // const newGame = new WolfGame(id, parseFloat(stakes))
         const newGame = new WolfGame()
         newGame.id = gameObj.id
         newGame.stakes = parseFloat(gameObj.stakes)
         newGame.foursome_id = parseInt(gameObj.foursome_id)
         newGame.course_id = parseInt(gameObj.course_id)
-        // console.log(renderWolfGame(newGame), gameObj)
         document.querySelector(".wolf-game-container").id = `${gameObj.id}`
         renderWolfGame(newGame)
     })
@@ -181,14 +164,11 @@ function createNewWolfGame(json){
 
 
 function renderWolfGame(game){
-    debugger
     fetch(`${BASE_URL}/wolf_games/${game.id}`)
     .then(resp => resp.json())
     .then(json => {
         const initialsList = document.querySelector("#player-initials-list")
-        debugger
         displayScorecard(json)
-        
         json.foursome.forEach(golfer => {
             let golferInitials = document.createElement("h2")
             golferInitials.innerText = `${golfer.initials}`
@@ -203,13 +183,12 @@ function renderWolfGame(game){
 }
 
 
-// Iterates over wolfGame.course.holes and fills wolf-game-container with hole info
+// ITERATES OVER WOLFGAME.COURSE.HOLES AND FILLS WOLF-GAME-CONTAINER WITH HOLE INFO
 
 function displayScorecard(wolfGame) {
     document.querySelector(".foursome-form").classList.add("hidden")
     wolfGame.holes.forEach(hole => {
-        // debugger
-        //your code to be executed after 1 second
+
         document.querySelector(".wolf-game-container").innerHTML += `
         <div class="hole-container horizontal-flex-container" id="${hole.number}">
         <div class="hole-info">
@@ -228,8 +207,6 @@ function addScoresToEachHole(wolfGame){
     fetch(`${BASE_URL}/wolf_games/${wolfGame.id}`)
     .then(resp => resp.json())
     .then(json => {
-        console.log(json)
-        
         document.querySelectorAll(".hole-container").forEach(hole => {
             let wolf = parseInt(hole.id)%4
             if (wolf === 0) wolf = 4
@@ -261,7 +238,6 @@ function addScoresToEachHole(wolfGame){
 }
 
 function updateDOMScorecard(){
-    // document.querySelectorAll()
     document.querySelectorAll(".ticker-button").forEach(ticker => {
         ticker.addEventListener("click", event => {
             const par = event.currentTarget.parentElement.parentElement.parentElement.previousElementSibling.previousElementSibling.innerText.slice(-1)
@@ -273,11 +249,6 @@ function updateDOMScorecard(){
     })
         
 }
-
-
-// function do something weith new ascore updateScorecardWithButtons
-
-
 
 function addEventListenersToSendScoreButtons(){
     const allSendStrokesButtons = document.querySelectorAll(".send-strokes")
@@ -291,10 +262,7 @@ function addEventListenersToSendScoreButtons(){
             let scoresFromHoleArray = []        
             
             event.currentTarget.parentElement.querySelectorAll(".player-strokes").forEach(score => scoresFromHoleArray.push(score.innerText))
-            console.log(hole, "HOLE", scoresFromHoleArray)
 
-
-            
             API.updateScores(wolfGameId, hole, scoresFromHoleArray)
         })
         

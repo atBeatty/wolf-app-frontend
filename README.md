@@ -13,7 +13,7 @@
 1. Navigate to the filepath of the *frontend* and open up the index.html file from the root
 
 ### MVP
-This project is designed with future developments in mind. The long term plan is to develop this is into an app that can 
+This project is designed with future developments in mind. The long term plan is to develop this is into an app that can allow the user to choose from a variety of golf games, and have it track gambling totals or points. 
 
 ### License
 

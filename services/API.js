@@ -1,24 +1,6 @@
 
 class API {
 
-    // static loadCourses(){
-    //     fetch(`${BASE_URL}/courses`)
-    //     .then(resp => resp.json())
-    //     .then(json => {
-    //         json.forEach(att => {
-
-    //             const id = att.id
-    //             const name = att.name
-    //             new Course(id, name)
-    //         })
-    //     })
-    // }
-
-    // static loadPriorWolfGames(){
-    //     fetch("http://localhots:3000/wolf_games")
-    //     .then(resp => )
-    // }
-
     static updateScores(gameId, hole, scores){
         fetch(`http://localhost:3000/wolf_games/${gameId}`, {
             method: "PATCH",
@@ -38,20 +20,10 @@ class API {
             const foursome_id = json.foursome[0].foursome_id
             const stakes = json.stakes
             const course_id = json.holes[0].course_id
-            
             const newGameObj = new WolfGame(id, stakes, foursome_id, course_id)
-
-            console.log("updated then return this", newGameObj)
-
+            // console.log("updated then return this", newGameObj)
             newGameObj.renderWithUpdatedScores(hole)
             // document.querySelector(".stakes-container").innerHTML += `${json.holes[0].score}`
         })
-        
-        // newGameObj.renderWithUpdatedScores()
-
     }
-// event.currentTarget.parentElement.parentElement.id
-
-
-
 }
